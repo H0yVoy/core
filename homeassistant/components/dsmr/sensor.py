@@ -162,6 +162,8 @@ async def async_setup_entry(
                 LOGGER.exception("Error connecting to DSMR")
                 transport = None
                 protocol = None
+                
+                return
             except CancelledError:
                 if stop_listener:
                     stop_listener()  # pylint: disable=not-callable
